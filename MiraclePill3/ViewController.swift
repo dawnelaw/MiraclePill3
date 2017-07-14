@@ -13,9 +13,14 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickkerBtn: UIButton!
     
+    let states = ["Alabama","Arkansas","Alaska","Colorado","New York"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        statePicker.dataSource = self
+        statePicker.delegate = self
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +30,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
 
     @IBAction func stateButtonPressed(_ sender: Any) {
+        statePicker.isHidden = false
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return states.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return states[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        statePickkerBtn.setTitle(states[row], for: UIControlState.normal)
+        statePicker.isHidden = true
     }
 }
 
