@@ -96,6 +96,7 @@
 				TargetAttributes = {
 					3B82CD4C1F192D0400C04E17 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = W4AEKE7F5R;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -260,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W4AEKE7F5R;
 				INFOPLIST_FILE = MiraclePill3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dawnlaw.MiraclePill3;
@@ -272,6 +274,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W4AEKE7F5R;
 				INFOPLIST_FILE = MiraclePill3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dawnlaw.MiraclePill3;
