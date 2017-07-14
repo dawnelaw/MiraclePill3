@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet weak var statePicker: UIPickerView!
+    @IBOutlet weak var statePickkerBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +24,7 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func stateButtonPressed(_ sender: Any) {
+    }
 }
 
