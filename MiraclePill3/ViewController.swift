@@ -13,6 +13,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var statePickkerBtn: UIButton!
     
+    @IBOutlet weak var greatTextField: UITextField!
+    @IBOutlet weak var thisIsTextField: UITextField!
+    
     let states = ["Alabama","Arkansas","Alaska","Colorado","New York"]
     
     override func viewDidLoad() {
@@ -31,6 +34,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBAction func stateButtonPressed(_ sender: Any) {
         statePicker.isHidden = false
+        greatTextField.isHidden = true
+        thisIsTextField.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -48,6 +53,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickkerBtn.setTitle(states[row], for: UIControlState.normal)
         statePicker.isHidden = true
+        greatTextField.isHidden = false
+        thisIsTextField.isHidden = false
     }
 }
 
