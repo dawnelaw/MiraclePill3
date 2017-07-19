@@ -148,6 +148,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6b-3a-fkQ">
+                                <rect key="frame" x="118" y="587" width="140" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Rbg-wm-O11"/>
+                                    <constraint firstAttribute="height" constant="40" id="jl8-Le-lnd"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="buyNowBtn"/>
+                                <connections>
+                                    <segue destination="51r-EE-bAL" kind="popoverPresentation" popoverAnchorView="y6b-3a-fkQ" id="ALH-i7-lK6">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -176,6 +189,8 @@
                             <constraint firstItem="CSU-aT-oWi" firstAttribute="leading" secondItem="bf6-Wz-ngY" secondAttribute="leading" id="Wvy-9E-ym3"/>
                             <constraint firstItem="cve-Dv-Rii" firstAttribute="centerX" secondItem="xJr-vh-Iyr" secondAttribute="centerX" id="YgG-x0-nhp"/>
                             <constraint firstItem="cve-Dv-Rii" firstAttribute="top" secondItem="xJr-vh-Iyr" secondAttribute="bottom" constant="8" id="abW-id-q03"/>
+                            <constraint firstItem="y6b-3a-fkQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bj6-aI-uGX"/>
+                            <constraint firstItem="y6b-3a-fkQ" firstAttribute="top" secondItem="HhY-Xb-RYZ" secondAttribute="bottom" constant="8" id="dNT-0N-zYb"/>
                             <constraint firstItem="bf6-Wz-ngY" firstAttribute="top" secondItem="Hqx-Ul-fkl" secondAttribute="bottom" constant="8" id="dgM-C7-P3i"/>
                             <constraint firstItem="i89-CR-jWW" firstAttribute="leading" secondItem="gDz-rJ-oBb" secondAttribute="leading" id="dlt-hr-mGP"/>
                             <constraint firstItem="bf6-Wz-ngY" firstAttribute="trailing" secondItem="Hqx-Ul-fkl" secondAttribute="trailing" id="feH-wW-y2O"/>
@@ -196,18 +211,49 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buyNowBtnPressed" destination="y6b-3a-fkQ" id="O28-6x-LAK"/>
                         <outlet property="greatTextField" destination="HhY-Xb-RYZ" id="6I9-fX-8fv"/>
                         <outlet property="statePicker" destination="DnL-ci-jxr" id="twf-Qt-WkH"/>
                         <outlet property="statePickkerBtn" destination="ivE-VQ-sAz" id="gd6-uE-D4W"/>
                         <outlet property="thisIsTextField" destination="XCs-we-Fnp" id="ncc-Lu-BpM"/>
+                        <outletCollection property="buyNowBtn" destination="y6b-3a-fkQ" collectionClass="NSMutableArray" id="PcI-ID-Dmr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.199999999999999" y="38.23088455772114"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="JNU-rg-Dyv">
+            <objects>
+                <viewController id="51r-EE-bAL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKU-VM-4Tk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Het-wc-B4Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bs2-RH-r0G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="Ir4-8Z-Quc">
+                                <rect key="frame" x="77" y="179" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ir4-8Z-Quc" firstAttribute="centerY" secondItem="Bs2-RH-r0G" secondAttribute="centerY" id="XfQ-rf-k3l"/>
+                            <constraint firstItem="Ir4-8Z-Quc" firstAttribute="top" secondItem="BKU-VM-4Tk" secondAttribute="bottom" constant="159" id="oIF-Eh-HRp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jf-15-kq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="38"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="buyNowBtn" width="225" height="45"/>
         <image name="miraclePillEmoji" width="90" height="90"/>
+        <image name="successIndicator" width="180" height="180"/>
     </resources>
 </document>
