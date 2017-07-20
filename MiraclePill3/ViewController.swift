@@ -16,7 +16,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var greatTextField: UITextField!
     @IBOutlet weak var thisIsTextField: UITextField!
     
-    @IBOutlet var buyNowBtn: [UIButton]!
+    @IBOutlet weak var successImage: UIImageView!
+    @IBOutlet weak var buyNowBtn: UIButton!
+    //@IBOutlet var buyNowBtn: [UIButton]!
     let states = ["Alabama","Arkansas","Alaska","Colorado","New York"]
     
     override func viewDidLoad() {
@@ -35,12 +37,20 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBAction func stateButtonPressed(_ sender: Any) {
         statePicker.isHidden = false
-        greatTextField.isHidden = true
-        thisIsTextField.isHidden = true
+     //   greatTextField.isHidden = true
+     //   thisIsTextField.isHidden = true
     }
     
-    @IBOutlet weak var buyNowBtnPressed: UIButton!
     
+    
+    @IBAction func buyNowBtnPressed(_ sender: Any) {
+        
+        for view in self.view.subviews as [UIView] {
+            view.isHidden = true
+        }
+        
+        successImage.isHidden = false
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
